@@ -6,9 +6,9 @@
  */
 int main(void)
 {
-char num_bdiez;
-num_bdiez = '0';
-while (num_bdiez <= '9')
+int num_bdiez;
+num_bdiez = 48;
+while (num_bdiez < 58)
 {
 putchar(num_bdiez);
 num_bdiez++;
