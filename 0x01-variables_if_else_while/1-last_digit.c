@@ -17,13 +17,13 @@ if (n > 5)
 {
 printf(" and is %d greater than 5\n", n % 10);
 }
-else if (n < 6)
+else if (n < 6 && n > 0)
 {
 printf(" and is %d less 6 and not 0\n", n % 10);
 }
 else
 {
-printf(" and is %d 0\n", n % 10);
+printf(" is %d and is 0\n", n % 10);
 }
 return (0);
 }
