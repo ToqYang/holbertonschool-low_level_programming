@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * print_to_98 - Entry point
- * @n: any number
+ * @h: any number
  */
 void print_to_98(int h)
 {
