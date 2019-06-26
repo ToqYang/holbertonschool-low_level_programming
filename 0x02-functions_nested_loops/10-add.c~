@@ -1,0 +1,9 @@
+#include "holberton.h"
+/**
+ * add - Print the sum of two integers
+ * Return: Print sum of x + y
+ */
+int add(int a, int b)
+{
+	return (a + b)
+}
