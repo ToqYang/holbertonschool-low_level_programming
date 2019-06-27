@@ -1,34 +1,36 @@
 #include <stdio.h>
 /**
-* main - Entry point
-* Return: 0
-**/
+ * main - Entry point
+ * Return: 0
+ */
 int main(void)
 {
-int f, s;
-int a, b, c, d;
-for (f = 0; f < 100; f++)
+int i, j, k;
+i = '0';
+j = i + 1;
+k = j + 1;
+while (i <= '7')
 {
-a = f / 10;
-b = f % 10;
-for (s = 0; s < 100; s++)
+while (j <= '8')
 {
-c = s / 10;
-d = s % 10;
-if (a < c || (a == c && b < d))
+while (k <= '9')
 {
-putchar(a + '0');
-putchar(b + '0');
-putchar(' ');
-putchar(c + '0');
-putchar(d + '0');
-if (!(a == 9 && b == 8))
+putchar(i);
+putchar(j);
+putchar(k);
+if (i != '7' || j != '8' || k != '9')
 {
 putchar(',');
 putchar(' ');
 }
+k++;
 }
+j++;
+k = j + 1;
 }
+i++;
+j = i + 1;
+k = j + 1;
 }
 putchar('\n');
 return (0);
