@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-	unsigned long long n, prime;
+	unsigned long long int n, prime;
 
 	prime = 612852475143;
 	for (n = 2; n < prime; n++)
