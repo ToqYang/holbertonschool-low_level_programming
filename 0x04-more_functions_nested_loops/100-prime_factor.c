@@ -1,13 +1,14 @@
 #include <stdio.h>
 /**
- * main - Numbers prime
- * Return: 0 success
+ * main - Prime factor
+ * Return: Int 0
  */
 int main(void)
 {
 	long int n, prime;
 
 	prime = 612852475143;
+
 	for (n = 2; n < prime; n++)
 	{
 		if (prime % n == 0)
@@ -16,6 +17,6 @@ int main(void)
 			n--;
 		}
 	}
-	printf("%llu\n", prime);
+	printf("%ld\n", prime);
 	return (0);
 }
