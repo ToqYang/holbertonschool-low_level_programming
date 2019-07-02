@@ -1,6 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
-
 /**
  * puts_half - Print 56789
  * @str: Store the char
