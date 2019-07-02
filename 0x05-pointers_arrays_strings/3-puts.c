@@ -1,6 +1,17 @@
 #include "holberton.h"
 
+/**
+ * _puts - Print the message of function
+ * @str: Pointer of a char
+ */
+
 void _puts(char *str)
 {
-	*str
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		_putchar(str[i]);
+	}
+	_putchar('\n');
 }
