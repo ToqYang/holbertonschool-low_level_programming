@@ -1,13 +1,13 @@
 #include "holberton.h"
 
 /**
- * _puts - Print the message of function
- * @str: Pointer of a char
+ * print_rev - Print the message of function
+ * @s: Pointer of a char
  */
 
 void print_rev(char *s)
 {
-        int i;
+	int i;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
@@ -16,5 +16,5 @@ void print_rev(char *s)
 	{
 		_putchar(s[i]);
 	}
-         _putchar('\n');
+	_putchar('\n');
 }
