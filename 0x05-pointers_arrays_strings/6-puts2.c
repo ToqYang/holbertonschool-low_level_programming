@@ -3,19 +3,21 @@
 
 /**
  * puts2 - Print the pairs
- * @s: Store the value char
+ * @str: Store the value char
  */
 
 void puts2(char *str)
 {
 	int i;
+	i = 0;
 
-	for (i = 0; str[i] != '\0'; i++)
+	while (*(str + i))
 	{
-		if (str[i] % 2 == 0)
+		if ((i % 2) == 0)
 		{
 			_putchar(str[i]);
 		}
+		i++;
 	}
 	_putchar('\n');
 }
