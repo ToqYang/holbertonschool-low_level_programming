@@ -1,4 +1,4 @@
-#ifndef HOLBERTON_HMPSA
+#ifndef HOLBERTON_HPSA
 #define HOLBERTON_HPSA
 char *_strcat(char *dest, char *src);
 char *_strncat(char *dest, char *src, int n);
