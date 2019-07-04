@@ -4,6 +4,7 @@
  * _strncat - Print concanete strings
  * @dest: Store destination
  * @src: Store source
+ * @n: Store the size
  * Return: dest
  */
 
