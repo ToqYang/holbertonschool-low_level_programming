@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * _puts_recursion - Print the function puts
+ * _print_rev_recursion - Print the function reverse
  * @s: Store the since first character
  * Return: Nothing
  */
