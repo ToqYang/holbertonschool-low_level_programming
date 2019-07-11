@@ -1,53 +1,58 @@
 #include "holberton.h"
 
 /**
- *_strlen_recursion - Palindrome
- * @s: Lenght string
- * Return: integer
+ * _len - Length string
+ * @s: Store s
+ * Return: Int length
  */
-
-int _strlen_recursion(char *s)
+int _length(char *s)
 {
 	if (*s == '\0')
 	{
 		return (0);
 	}
-	s++;
-	return (1 + _strlen_recursion(s));
+	else
+	{
+		return (1 + _length(s + 1));
+	}
 }
 
 /**
- * Is_Palindrome_Check - Check if is palindrome
- * @s: String pointer
- * Return: Nothing
+ * _comparation - Print comparation 0-1
+ * @s: String 
+ * @length: Length
+ * @i: Counter
+ * Return: Integer 0-1
  */
 
-int Is_Palindrome_Check(char *s)
+int _comparation(char *s, int len, int i)
 {
-	int length;
-
-	length = _strlen_recursion(s);
-	if (length <= 1)
-		return (1);
-	return (palindrome(s, length));
-}
-
-/**
- * palindrome - Return palindrome
- * @s: String
- * @len: Length
- * Return: Int
- */
-
-int palindrome(char *s, int length)
-{
-	if (length <= 1)
+	if (*(s + i) == *(s + len - 1 - i) && i == (len / 2))
 	{
 		return (1);
 	}
-	else if (*s == *(s + length - 1))
+	else if (*(s + i) != *(s + len - 1 - i))
 	{
-		return (palindrome(s + 1, length - 2));
+		return (0);
+	}
+	else
+	{
+		return (_comparation(s, len, i + 1));
+
+	}
+}
+
+/**
+ * is_palindrome - Print palindrome
+ * @s: String
+ * Return: int if palindrome
+ */
+
+int is_palindrome(char *s)
+{
+	if (_comparation(s, _length(s), 0) == 1)
+	{
+		return (1);
 	}
 	else
 	{
