@@ -21,12 +21,12 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		for(i = 1; i < argc; i++)
+		for (i = 1; i < argc; i++)
 		{
 			res *= atoi(argv[i]);
 		}
 		printf("%d", res);
 	}
 
-        return (0);
+	return (0);
 }
