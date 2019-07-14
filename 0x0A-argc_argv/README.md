@@ -1,0 +1,1 @@
+Arguments count and argumenst value in main function.
