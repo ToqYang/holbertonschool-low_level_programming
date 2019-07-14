@@ -18,6 +18,7 @@ int main(int argc, char **argv)
 	if (argc == 1)
 	{
 		printf("Error\n");
+		return(1);
 	}
 	else
 	{
@@ -25,7 +26,7 @@ int main(int argc, char **argv)
 		{
 			res *= atoi(argv[i]);
 		}
-		printf("%d", res);
+		printf("%d\n", res);
 	}
 
 	return (0);
