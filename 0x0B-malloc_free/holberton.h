@@ -1,5 +1,5 @@
-#idfndef HOLBERTON_HEAP
-#define HOLBERTON_HEAP
+#ifndef HOLBERTON_HE
+#define HOLBERTON_HE
 int _putchar(char c);
 char *create_array(unsigned int size, char c);
 char *_strdup(char *str);
