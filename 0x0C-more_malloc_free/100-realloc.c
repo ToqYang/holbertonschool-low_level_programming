@@ -9,32 +9,28 @@
  * Return: Pointer
  */
 
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	char *cpy_allocate;
+	void *cpy_allocate;
 
 	unsigned int i;
 
-
+	if (ptr == NULL)
+		cpy_allocate = malloc(new_size);
 	if (new_size > old_size)
-	{
+		cpy_allocate = malloc(new_size);
 
-	}
+		if (cpy_allocate == NULL)
+			return (NULL);
+
+		for (i = 0; i < old_size; i++)
+			cpy_allocate[i] = ptr[i];
 
 	if (new_size == old_size)
-	{
 		return (ptr);
-	}
-
-	if (ptr == NULL )
-	{
-		cpy_allocate = malloc(new_size * sizeof(char));
-	}
-
 	if (new_size == 0 && ptr != 0)
-	{
-		free(ptr)
-	}
+		free(ptr);
 
-
+	free(ptr);
+	return (cpy_allocate);
 }
