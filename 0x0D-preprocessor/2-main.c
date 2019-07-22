@@ -2,8 +2,6 @@
 
 /**
  * main - Print the name file
- * @argc: Count arguments
- * @argv: Value arguments
  * Return: Nothing
  */
 
