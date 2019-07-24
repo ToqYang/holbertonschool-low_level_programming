@@ -20,15 +20,15 @@ int int_index(int *array, int size, int (*cmp)(int))
 
 		for (i = 0; i < size; i++)
 		{
-			if ((cmp)(array[i]))
+			if ((*cmp)(array[i]))
 			{
 				index = i;
-				break;
+				return (index);
 			}
 		}
 
 		if (i == size)
 			return (-1);
 	}
-	return (index);
+	return (-1);
 }
