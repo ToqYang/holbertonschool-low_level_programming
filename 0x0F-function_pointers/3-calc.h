@@ -40,6 +40,4 @@ int (*get_op_func(char *s))(int, int);
  * Return: 0
 */
 
-int main(int argc, char *argv);
-
 #endif
