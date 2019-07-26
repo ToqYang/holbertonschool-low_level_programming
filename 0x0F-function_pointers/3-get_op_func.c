@@ -3,8 +3,9 @@
 #include "3-calc.h"
 
 /**
- * @get_op_func: Get operator functions
+ * get_op_func - Get operator functions
  * @s: Store the char selection
+ * Return: 0
  */
 
 int (*get_op_func(char *s))(int, int)
