@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "3-calc.h"
 
 /**
@@ -14,15 +15,27 @@ int op_add(int a, int b)
 }
 
 /**
+ * op_sub - Print the substractuion of two numbers
+ * @a: Numb-1
+ * @b: Numb-2
+ * Return: The operation substraction
+ */
+
+int op_sub(int a, int b)
+{
+	return (a - b);
+}
+
+/**
  * op_mul - Print the multiplication of two numbers
- * @a: Number-1
- * @b: Number-2
- * Return: The operation multiplication
+ * @a: Num_11
+ * @b: Num_22
+ * Return: The operation of multiplication
  */
 
 int op_mul(int a, int b)
 {
-	return (a * b);
+        return (a * b);
 }
 
 /**
@@ -31,6 +44,7 @@ int op_mul(int a, int b)
  * @b: Number_2
  * Return: The operation division
  */
+
 
 int op_div(int a, int b)
 {
