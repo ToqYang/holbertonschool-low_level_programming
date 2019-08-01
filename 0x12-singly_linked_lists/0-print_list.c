@@ -4,13 +4,13 @@
 
 /**
  * print_list - Print list linked
- * @list_t: Const list of a pointer
+ * @h: Const list of a pointer
  * Return: Size_t
  */
 
 size_t print_list(const list_t *h)
 {
-	unsigned count;
+	int count;
 
 	count = 0;
 
