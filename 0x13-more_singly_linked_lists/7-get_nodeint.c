@@ -10,19 +10,19 @@
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
 	unsigned int i;
-	listint_t *getnode;
+	listint_t *get_Node;
 
 	if (head == NULL)
 	{
 		return (NULL);
 	}
 
-	getnode = head;
+	get_Node = head;
 
-	for (i = 0; i <= index; i++)
+	for (i = 0; i < index; i++)
 	{
-		getnode = getnode->next;
+		get_Node = get_Node->next;
 	}
 
-	return (getnode);
+	return (get_Node);
 }
