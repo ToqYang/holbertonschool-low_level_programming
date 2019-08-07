@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * insert_node_at_index - Print the node the index
+ * insert_nodeint_at_index - Print the node the index
  * @head: Double pointer for access to struct
  * @idx: Index to insert
  * @n: Value to insert
@@ -20,14 +20,10 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	if (new_Node == NULL)
 		return (NULL);
-
 	insert = *head;
-
 	if (idx == 0)
-	{
 		new_Node->next = *head;
 		*head = new_Node;
-	}
 	else
 	{
 		for (count = 1; count < idx; count++)
