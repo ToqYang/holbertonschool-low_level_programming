@@ -9,28 +9,31 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int fd_O, fd_R, fd_W, count;
+	int fd_O, fd_W, count;
+
+	fd_O = 0;
+	fd_W = 0;
+	count = 0;
 
 	if (filename == NULL)
 		return (-1);
 
-	fd_O = open(filename, O_CREAT | O_APPEND, 0600);
+	fd_O = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
 
 	if (fd_O == -1)
-		return (0);
+		return (-1);
 
-	for (count = 0; text_content[count] != '\0'; count++)
-		;
+	if (text_content != NULL)
+	{
+		for (count = 0; text_content[count] != '\0'; count++)
+			;
+		fd_W = write(fd_O, text_content, count);
 
-	fd_R = read(fd_O, text_content, count);
+		if (fd_W == -1)
+			return (-1);
+	}
 
-	if (fd_R == -1)
-		return (0);
-
-	fd_W = write(STDOUT_FILENO, text_content, count);
-
-	if (fd_W == -1)
-		return (0);
+	close(fd_O);
 
 	return (1);
 }
