@@ -15,9 +15,8 @@ int append_text_to_file(const char *filename, char *text_content);
 
 void copy_text_to_file(char *file_from, char *file_to);
 
-void error_open_read(int file_descriptor);
-void error_make_write(int file_descriptor);
-void print_error_close(int file_descriptor);
-
+void error_open_read(int file_descriptor, char *file);
+void error_make_write(int file_descriptor, char *file);
+void print_error_close(int file_descriptor, char *file);
 
 #endif

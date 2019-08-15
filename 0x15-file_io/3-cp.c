@@ -37,24 +37,24 @@ void copy_text_to_file(char *file_from, char *file_to)
 	fd_O1 = open(file_from, O_RDONLY);
 	fd_O2 = open(file_to, O_RDWR | O_CREAT | O_TRUNC | O_APPEND, 0664);
 
-	error_open_read(fd_O1);
-	error_make_write(fd_O2);
+	error_open_read(fd_O1, file_from);
+	error_make_write(fd_O2, file_to);
 
 
 	while (fd_R == 1024)
 	{
 		fd_R = read(fd_O1, buffer, 1024);
-		error_open_read(fd_R);
+		error_open_read(fd_R, file_from);
 
 		fd_W = write(fd_O2, buffer, fd_R);
-		error_make_write(fd_W);
+		error_make_write(fd_W, file_to);
 	}
 
 	fd_Cl1 = close(fd_O1);
-	print_error_close(fd_Cl1);
+	print_error_close(fd_Cl1, file_from);
 
 	fd_Cl2 = close(fd_O2);
-	print_error_close(fd_Cl2);
+	print_error_close(fd_Cl2, file_to);
 }
 
 
@@ -63,13 +63,13 @@ void copy_text_to_file(char *file_from, char *file_to)
  * @file_descriptor: Integer with the number of the file descriptor
  */
 
-void error_open_read(int file_descriptor)
+void error_open_read(int file_descriptor, char *file)
 {
 	if (file_descriptor == -1)
 	{
-		exit(98);
 		dprintf(STDERR_FILENO,
-			"Error: Can't read from file NAME_OF_THE_FILE");
+			"Error: Can't read from file %s", file);
+		exit(98);
 	}
 }
 
@@ -78,13 +78,13 @@ void error_open_read(int file_descriptor)
  * @file_descriptor: Integer with the number of the file descriptor
  */
 
-void error_make_write(int file_descriptor)
+void error_make_write(int file_descriptor, char *file)
 {
 	if (file_descriptor == -1)
 	{
-		exit(99);
 		dprintf(STDERR_FILENO,
-			"Error: Can't write to NAME_OF_THE_FILE");
+			"Error: Can't write to %s", file);
+		exit(99);
 	}
 }
 
@@ -93,12 +93,12 @@ void error_make_write(int file_descriptor)
  * @file_descriptor: Integer with the number of the file descriptor
  */
 
-void print_error_close(int file_descriptor)
+void print_error_close(int file_descriptor, char *file)
 {
 	if (file_descriptor == -1)
 	{
-		exit(100);
 		dprintf(STDERR_FILENO,
-			"Error: Can't write to NAME_OF_THE_FILE");
+			"Error: Can't write to %s", file);
+		exit(100);
 	}
 }
