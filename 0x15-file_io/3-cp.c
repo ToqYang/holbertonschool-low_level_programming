@@ -61,6 +61,7 @@ void copy_text_to_file(char *file_from, char *file_to)
 /**
  * error_open_read - Read file descriptor and manage the errors
  * @file_descriptor: Integer with the number of the file descriptor
+ * @file: Contain name of file
  */
 
 void error_open_read(int file_descriptor, char *file)
@@ -76,6 +77,7 @@ void error_open_read(int file_descriptor, char *file)
 /**
  * error_make_write - Manage errors with make or write new file
  * @file_descriptor: Integer with the number of the file descriptor
+ * @file: Contain name of file
  */
 
 void error_make_write(int file_descriptor, char *file)
@@ -91,6 +93,7 @@ void error_make_write(int file_descriptor, char *file)
 /**
  * print_error_close - Manage the error of the file, it doesn't close
  * @file_descriptor: Integer with the number of the file descriptor
+ * @file: Contain name of file
  */
 
 void print_error_close(int file_descriptor, char *file)
