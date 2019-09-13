@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * dlistint_t - Add node at the beginning
+ * add_dnodeint - Print the int
  * @head: Address of head of the index
  * @n: Value to put
  * Return: The list
