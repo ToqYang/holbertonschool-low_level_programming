@@ -2,9 +2,15 @@
 #include <stdlib.h>
 #include "lists.h"
 
+/**
+ * print_dlistint - Print the elements and number of elements
+ * @h: Receive the direction of the node
+ * Return: Counter of the elements
+ */
+
 size_t print_dlistint(const dlistint_t *h)
 {
-	int count;
+	size_t count;
 
 	count = 0;
 
@@ -15,5 +21,5 @@ size_t print_dlistint(const dlistint_t *h)
 		++count;
 	}
 
-	return(count);
+	return (count);
 }
