@@ -1,0 +1,1 @@
+This contain my advances about dynamic libraries
