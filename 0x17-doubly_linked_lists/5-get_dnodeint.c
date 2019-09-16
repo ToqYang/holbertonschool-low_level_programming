@@ -6,32 +6,32 @@
  * @index: The node
  * Return: List
  */
- 
+
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-	size_t int count;
+	size_t count;
 	dlistint_t *new_Node;
-	
+
 	count = 0;
 	new_Node = NULL;
 
 	if (head == NULL)
 		return (NULL);
-		
+
 	new_Node = head;
-	
+
+	if (index == 0)
+		return (new_Node);
+
 	while (count < index)
 	{
-		node = node->next;
-		
-		if (new_Node)
+		new_Node = new_Node->next;
+
+		if (new_Node == NULL)
 			return (NULL);
-			
+
 		++count;
 	}
-	
-	if (index == 0)
-		return (head);
 
 	return (new_Node);
 }
