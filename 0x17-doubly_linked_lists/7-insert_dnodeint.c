@@ -5,6 +5,7 @@
  * @h:Address node
  * @idx: Number of the index
  * @n: Number node
+ * Return: Node inserted
  */
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
