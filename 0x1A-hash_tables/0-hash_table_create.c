@@ -2,6 +2,7 @@
 
 /**
  * hash_table_create - Make a hash table
+ *
  * @size: of the hash table
  * Return: Space of the hash table
  */
@@ -9,6 +10,9 @@
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *table = NULL;
+
+	if (size <= 0)
+		return (NULL);
 
 	table = calloc(sizeof(hash_table_t), 1);
 
