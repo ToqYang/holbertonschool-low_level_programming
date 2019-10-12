@@ -8,26 +8,34 @@
 
 void hash_table_print(const hash_table_t *ht)
 {
-	hash_table_t *traver = NULL;
-	int idx = 0;
+	hash_node_t *traver = NULL;
+	unsigned long int idx = 0;
 
-	if (ht == NULL)
+	if (ht == NULL || ht->array == NULL)
 	{
 		putchar(123);
-		putchar(44);
+		putchar(10);
+		putchar(125);
 		return;
 	}
 
-	traver = ht->array[0];
+	putchar(123);
 
-	while (traver != NULL)
+	while (idx < ht->size)
 	{
-		if (traver[idx] == 0 || traver == NULL)
-			putchar(123);
+		traver = ht->array[idx];
+		while (traver != NULL)
+		{
+			printf("\'%s\':\'%s\'", traver->key, traver->value);
+			putchar(44);
+			putchar(32);		
+			traver = traver->next;
 
-		printf("\'%s\':\'%s\'\n", traver->key, traver->value);
-		putchar(44);
-		traver = traver->next;
+			if (traver == NULL)
+				break;
+		}
 		++idx;
 	}
+	putchar(125);
+	putchar(10);
 }
