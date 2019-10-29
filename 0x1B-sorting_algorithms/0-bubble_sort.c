@@ -9,8 +9,9 @@
 void bubble_sort(int *array, size_t size)
 {
 	int min = 0, sen = 0;
+	size_t j = 0;
 
-	if (array == NULL || size < 2)
+	if (!array)
 		return;
 
 	/** Value sentinel for know if there swap */
@@ -20,7 +21,7 @@ void bubble_sort(int *array, size_t size)
 		sen = -1;
 
 		/** Traversing the array */
-		for (size_t j = 0; j < size - 1; ++j)
+		for (j = 0; j < size - 1; ++j)
 		{
 			/** Verify if the current is greater than the next */
 			if (array[j] > array[j + 1])
