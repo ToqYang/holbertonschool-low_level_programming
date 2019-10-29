@@ -1,4 +1,4 @@
-#include <stddef.h>
+#include <stdlib.h>
 #include "sort.h"
 
 /**
@@ -10,6 +10,9 @@
 void bubble_sort(int *array, size_t size)
 {
 	int min = 0, sen = 0;
+
+	if (array == NULL || size < 2)
+		return;
 
 	/** Value sentinel for know if there swap */
 	while (sen != -1)
