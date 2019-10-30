@@ -7,51 +7,35 @@
 
 void insertion_sort_list(listint_t **list)
 {
-	/** Verify if the list is NULL */
+	listint_t *curr_node = *list, *node1, *node2;
+	int sentinel = 0;
+
 	if (*list == NULL || list == NULL)
 		return;
 
-	listint_t *curr_node = *list;
-	listint_t *prev_node = curr_node;
-
-	/** Loop until that the current node will be NULL */
 	while (curr_node != NULL)
 	{
-		/** Copy of the position of the current node for after
-		    traversing
-		    in reverse */
-		prev_node = curr_node;
-
-		/** If the node prev not is the head */
-		if (prev_node->prev != NULL)
+		node1  = curr_node;
+		while (curr_node->prev != NULL && curr_node->n < curr_node->prev->n)
 		{
-			/** Loop for traversing in reverse until find NULL */
-			while (prev_node != NULL)
-			{
-				/** Current node number is less than
-				    previous */
-				if (prev_node != NULL || prev_node->n < prev_node->prev->n)
-				{
-					/** Next node is equal to direction of
-					    the next */
-					prev_node->next = prev_node->prev;
-					/** The prev node, the next is the
-					    current node */
-					prev_node->prev->next = prev_node;
-					/** The current node prev is equal the
-					    next of the next node with the
-					    swapping */
-					prev_node->prev = prev_node->next->prev;
-					/** The next node, the previous pointing
-					    to previous node
-					 */
-					prev_node->next->prev = prev_node;
-				}
-
-				/** Traversing in reverse */
-				prev_node = prev_node->prev;
-			}
+			node2 = curr_node->prev;
+			if (curr_node->next != NULL)
+				curr_node->next->prev = node2;
+			node2->next = curr_node->next;
+			if (node2->prev != NULL)
+				node2->prev->next = curr_node;
+			curr_node->prev = node2->prev;
+			node2->prev = curr_node;
+			curr_node->next = node2;
+			if (sentinel == 0)
+				node1 = node2;
+			sentinel = 1;
+			if ((*list)->prev != NULL)
+				*list = (*list)->prev;
+			print_list(*list);
 		}
+		curr_node = node1;
 		curr_node = curr_node->next;
+		sentinel = 0;
 	}
 }
