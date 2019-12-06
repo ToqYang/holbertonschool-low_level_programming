@@ -16,6 +16,8 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 	/** Make a new node */
 	new = binary_tree_node(parent, value);
 
+	if (new == NULL)
+		return (NULL);
 	/** The left of the new node is equal to parent of left */
 	new->left = parent->left;
 	/** The left of the root will be the new node */
