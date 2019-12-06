@@ -10,7 +10,7 @@ int binary_tree_is_leaf(const binary_tree_t *node)
 	/** Veify if exit some child */
 	if (node->left != NULL || node->right != NULL)
 		return (0);
+	/** If the node is leaf */
 	else
-		/** If the node is leaf */
 		return (1);
 }
