@@ -1,7 +1,6 @@
 #include <stdio.h>
+#include "search_algos.h"
 
-
-void print_array(int *array, unsigned int start, unsigned int end);
 /**
  * binary_search - It search to the number to find
  * @array: (int) Store the numbers
