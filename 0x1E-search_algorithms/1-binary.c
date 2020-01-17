@@ -48,12 +48,10 @@ void print_array(int *array, unsigned int start, unsigned int end)
 {
 	while (start <= end)
 	{
-		printf("%d", array[start]);
 		if (start == end)
-			printf(" ");
+			printf("%d\n", array[start]);
 		else
-			printf(", ");
+			printf("%d, ", array[start]);
 		++start;
 	}
-	printf("\n");
 }
